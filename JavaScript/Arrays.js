@@ -1,70 +1,57 @@
-// let a = [1, 2]
-// a.pippo = "ciao"
-// a.length
 
-// console.log(a.pippo)
-
+//Function max that returns the maximum value in the array "a" (recursive)
 function max(a) {
+    //The 3 dots is a spread, it copies the element of an array somewhere else or allows the opposite
     let [primo, ...resto] = a
-    
+
     if (typeof primo == "undefined")
         return -Infinity
-    
+    //If the fist element is the only one then it's the max
     if (resto.length == 0)
         return primo
-    
+
     return Math.max(primo, max(resto))
 }
 
+//Same function as above, but for the minimum value
 function min(a) {
     let [primo, ...resto] = a
-    
+
     if (typeof primo == "undefined")
         return Infinity
-    
+
     if (resto.length == 0)
         return primo
-    
+
     return Math.min(primo, min(resto))
 }
-console.log(
-    max([1, 2, 3, 40, 5, 6, -10]),
-    min([1, 2, 3, 40, 5, 6, -10]))
 
+
+
+//Finds maximum and minimum in an array and returns it as a couple of values (array)
 function maxmin(a) {
     let [primo, ...resto] = a
-    
+
     if (typeof primo == "undefined")
         return [-Infinity, Infinity]
-    
+
     if (resto.length == 0)
         return [primo, primo]
-    
+
     let [rmax, rmin] = maxmin(resto)
     return [Math.max(primo, rmax), Math.min(primo, rmin)]
 }
 
-console.log(maxmin([1, 2, 3, 40, 5, 6, -10]))
+//Test logs for the functions above
+//Array initialization
+let arr = [1, 2, 3, 40, 5, 6, -10]
+console.log("Array: " + arr)
+//Max and min functions test log
+console.log("Max: " + max(arr), "Min: " + min(arr))
+//Maxmin function test log
+console.log("Max & Min: " + maxmin(arr))
 
-function sommaLista(head) {
-    // head.val
-    // head.next
-}
-function sommaLista(a) {
-    let [val, ...next] = a
-    // head.val
-    // head.next
-}
-
-function sommaListaCoda(a) {
-    let val = a.pop()
-    // next -> a
-    // head.val
-    // head.next
-}
-
-
-console.log([1, 2, 3, 40, 5, 6, -10].filter(x => x > 3))
+console.log(a.filter(x => x > 3))
 
 console.log(["1", "2", "3"].includes(3))
 console.log(["1", "2", "3"].some(x => x === 3))
@@ -85,7 +72,7 @@ function raddoppia(v) {
     return v * 2
 }
 
-console.log([1, 2, 3, 4].map(v => v*2))
+console.log([1, 2, 3, 4].map(v => v * 2))
 
 console.log([1, 2, 3, 4].map(raddoppia))
 
@@ -112,9 +99,8 @@ console.log(`Ti chiami ${nome} e hai ${eta} anni`)
 // let bimbi = O.b || 0
 
 function disegna(x, y,
-    { raggio=0, colore="nero", bordo=1, etichetta="" } )
-{ 
-/* codice di disegno; usa x,y, raggio, colore, bordo, etichetta  */
+    { raggio = 0, colore = "nero", bordo = 1, etichetta = "" }) {
+    /* codice di disegno; usa x,y, raggio, colore, bordo, etichetta  */
 }
 // function disegna(x, y, parametri ) {
 //     const { raggio=0, colore="nero", bordo=1, etichetta="" }
