@@ -1,1 +1,0 @@
-/*Scrivere un programma che legge due matrici quadrate di dimensione 10x10 e fa il prodotto scalare. */
